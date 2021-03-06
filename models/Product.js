@@ -11,7 +11,7 @@ class Product extends Model {}
 // set up fields and rules for Product model
 Product.init(
   {
-    id: {
+      id: {
       type: DataTypes.INTEGER,
       allowNull: false,
       primaryKey: true,
@@ -19,8 +19,7 @@ Product.init(
     },
     product_name: {
       type: DataTypes.STRING,
-      allowNull: false
-      
+      allowNull: false      
     },
     price: {
       type: DataTypes.DECIMAL,
@@ -39,13 +38,12 @@ Product.init(
       },
       category_id: {
           type: DataTypes.INTEGER,
-          //REFERENCES THE category MODEL'S id
          references: {
-          // model: Category,
-           key: 'id'
-         }
+            model: 'category',
+            key: 'id'
+          }
       }
-              
+          //REFERENCES THE category MODEL'S id         
   },
 
   {
@@ -53,7 +51,7 @@ Product.init(
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: 'Product',
+    modelName: 'product',
   }
 );
 
