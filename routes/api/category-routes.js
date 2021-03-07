@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { Category, Product } = require('../../models');
+const { Category, Product, ProductTag } = require('../../models');
 //const sequelize = require('../../config/connection');
 //const { DataTypes } = require('sequelize/types');
 
@@ -12,7 +12,7 @@ router.get('/', (req, res) => {
     include: [
       {
         model: Product,
-        attributes: ['id']
+        attributes: ['id', 'product_name', 'price', 'stock', 'category_id'],
       }
     ]
   }).then(dbCategoryData =>  res.json(dbCategoryData))
@@ -30,16 +30,16 @@ router.get('/:id', (req, res) => {
    where: {
      id: req.params.id
    },
-   attributes: ['id', 'category_name'],
+   attributes: ['id'],
    include: [
      {
        model: Product,
-       attributes: ['id']
+       attributes: ['product_name', 'price', 'stock', 'category_id'],
      }
    ]
  }).then(dbCategoryData => {
    if (!dbCategoryData) {
-     res.status(404).json({ message: 'This category does not exist!'});
+     res.status(404).json({ message: 'This id does not exist!'});
      return;
    }
   res.json(dbCategoryData);

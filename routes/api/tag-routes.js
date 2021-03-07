@@ -6,10 +6,10 @@ const { Tag, Product, ProductTag } = require('../../models');
 router.get('/', (req, res) => {
   // find all tags  // be sure to include its associated Product data
   Tag.findAll({
-    attributes: ['id', 'Tag_name'],
+    attributes: ['id', 'tag_name'],
     include: [
       {
-        model: [Product, ProductTag],
+        model: Product, ProductTag,
         attributes: ['id']
       }
     ]
@@ -26,16 +26,16 @@ router.get('/:id', (req, res) => {
     where: {
       id: req.params.id
     },
-    attributes: ['id', 'Tag_name'],
+    attributes: ['id', 'tag_name'],
     include: [
       {
-        model: [Product, ProductTag],
+        model: Product, ProductTag,
         attributes: ['id']
       }
     ]
   }).then(dbTagData => {
     if (!dbTagData) {
-      res.status(404).json({ message: 'This Tag does not exist!'});
+      res.status(404).json({ message: 'This id does not exist!'});
       return;
     }
    res.json(dbTagData);
