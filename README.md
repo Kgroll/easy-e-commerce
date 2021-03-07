@@ -15,7 +15,7 @@
 
 
   ## Descripition
-  A fast, easy and reliable back-end e-commerce website, using the latest and greatest technologies. 
+  A fast, easy and reliable back end e-commerce website, using the latest and greatest technologies. 
 
 
   ## Installation
