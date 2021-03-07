@@ -9,15 +9,13 @@
 
   * [Features](#features)
 
-  * [Contributions](#contributions)
-
   * [Screenshots](#screenshots)
 
   * [Video Walkthrough](#video)
 
 
   ## Descripition
-  Your challenge is to build the back end for an e-commerce site. . 
+  A fast, easy and reliable back-end e-commerce website, using the latest and greatest technologies. 
 
 
   ## Installation
@@ -47,7 +45,6 @@
 
   
 
-  ## Credits
 
 
 
